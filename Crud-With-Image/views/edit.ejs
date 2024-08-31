@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Book Data</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #e0f7fa;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    form {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      width: 100%;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #00796b;
+      text-align: center;
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      color: #00796b;
+      font-weight: 500;
+      font-size: 16px;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+      width: calc(100% - 22px);
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #b2dfdb;
+      border-radius: 6px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    input::placeholder {
+      color: #00796b;
+      opacity: 0.7;
+    }
+
+    button[type="submit"] {
+      background-color: #00796b;
+      color: #ffffff;
+      border: none;
+      padding: 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      width: 100%;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #004d40;
+      transform: scale(1.02);
+    }
+
+    button[type="submit"]:active {
+      background-color: #003d33;
+    }
+
+    @media (max-width: 600px) {
+      form {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 20px;
+      }
+
+      input[type="text"],
+      input[type="number"] {
+        font-size: 14px;
+        padding: 10px;
+      }
+
+      button[type="submit"] {
+        font-size: 14px;
+        padding: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <form action="/editData?id=<%=editdata._id%>" method="post">
+    <h1>Update Book Data</h1>
+    
+    <label for="title">Book Title:</label>
+    <input type="text" id="title" name="Title" placeholder="Book Title" value="<%=editdata.Title%>">
+    
+    <label for="author">Book Author:</label>
+    <input type="text" id="author" name="Author" placeholder="Book Author" value="<%=editdata.Author%>">
+    
+    <label for="publishedYear">Book Published Year:</label>
+    <input type="number" id="publishedYear" name="PublishedYear" placeholder="Book Published Year" value="<%=editdata.PublishedYear%>">
+    
+    <label for="pages">Book Pages:</label>
+    <input type="number" id="pages" name="Pages" placeholder="Book Pages" value="<%=editdata.Pages%>">
+    
+    <label for="price">Book Price:</label>
+    <input type="number" id="price" name="Price" placeholder="Book Price" value="<%=editdata.Price%>">
+    
+    <label for="publishedCopies">Book Published Copies:</label>
+    <input type="number" id="publishedCopies" name="PublishedCopies" placeholder="Book Published Copies" value="<%=editdata.PublishedCopies%>">
+    
+    <button type="submit">Update</button>
+  </form>
+</body>
+</html>
